@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Podcast detail</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <!-- <link href="assets/img/favicon.png" rel="icon"> -->
+  <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <style>
+    /* Style the popup */
+    .popup {
+        display: none; /* Hide by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 20%;
+        right: 20%;
+        top: 1px;
+        width: 80%;
+        height: 100%;
+        overflow: auto; /* Enable scroll if needed */
+        float:right;
+        /* background-color: rgba(7, 67, 99, 0.5); Black  opacity; */
+    }
+    /* Style the popup content */
+    .popup-content {
+        background-color: rgb(150, 132, 33);
+        margin: 10% auto; /* 10% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+    /* Style the close button */
+    .popup-close {
+        color: green;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .popup-close:hover,
+    .popup-close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+<header id="" class="" style="background-color: grey;">
+  <div class="container d-flex align-items-center">
+    
+    <img class="logo me-auto" style="border-radius: 15px;"  src="{% static 'assets/img/logo.jpg' %}" height="60px;" width="90px;" />
+    <h5 style="color:white; color:white; font-size: xx-large;" class="logo me-auto ">Sylvie Tamanda</h5>
+  <details>
+      <summary style="margin-top: 0px;">
+        <img src="{% static 'assets/img/menu_icon.png' %}"/>
+      </summary>
+      <ul style="height: 200px; width: 160px; padding-left: -1px; padding-right: 20px;">
+        <div style="color:green;" class="container">
+        <div class="row" >
+          <li><a style="color:green;" href="{% url 'index' %}">Home</a></li>
+          <li><a style="color:green;" href="{% url 'about' %}">About Me</a></li>
+            <li><a style="color:green;" href="https://anchor.fm/sylvie-tamanda?utm_source=web&utm_campaign=web-share&utm_medium=sharing&%24web_only=true&_branch_match_id=1014947443770109628&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXLy7IL8lMq0zMS87IL9ItT03SSywo0MvJzMvWT9U3TgoL9HIOLawsTwIAKQpcFTAAAAA%3D">PodCast</a></li>
+            <li><a style="color:green;" href="https://www.youtube.com/@tickettofreedomacademy">Youtube</a></li>
+            <li><a style="color:green;" href="{% url 'courses' %}">Courses</a></li>
+            <li><a style="color:green;" href="{% url 'products' %}">Products</a></li>
+            <li><a style="color:green;" href="{% url 'events' %}">Events</a></li>
+          </div>
+        </div>
+      </ul>
+    </details>
+  </div>
+</header><!-- End Header -->
+
+    <!-- ================================
+    End Navigation Bar
+    ================================= -->
+
+    <!-- ================================
+    Start Content
+    ================================= -->
+    <section>
+      <div class="btn btn-primary" style="margin-left:110px; margin-top:-1px;">
+        <a href="{% url 'podcast' %}">Back</a>
+      </div>
+      <div class="innerPageBannerCol">
+        <div class="container mt-5">
+          <div class="row g-4 g-md-3  align-items-center">
+            <div class="col-md-6">
+              <div class="bannerContent">
+                <h1 class="xlTitle pb-md-3"><b>{{podcast.ttitles}}</b></h1>
+              </div>
+            </div>
+          </div>        
+
+          <div class="row">
+            <div class="col-md-auto">
+              <div class="authorCol">
+                <h4 class="smTitle pb-3">{{user.username}}</h4>
+              </div>
+            </div>
+            <div class="col-md">
+              <h4 class="smTitle pb-3">{{podcast.date_times}}</h4>
+            </div>
+          </div>
+            <div class="col-md-0 order-1 float-left">
+              <img src="{{podcast.picture.url}}" height="100%" width="100%" class="img-responsive" alt="">
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="sectionSpaceSm mt-5">
+        <div class="container">
+          <p>{{podcast.ccontents}}</p>
+        </div>
+      </div>
+      <style>
+        /* Style the audio player container */
+        .audio-player {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          max-width: 500px;
+          margin: 0 auto;
+          background-color: #f2f2f2;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+          padding: 20px;
+        }
+        
+        /* Style the audio player */
+        .audio-player audio {
+          width: 100%;
+          height: 50px;
+          margin-bottom: 20px;
+        }
+        
+        /* Style the audio player controls */
+        .audio-player audio::-webkit-media-controls-panel {
+          background-color: transparent;
+        }
+        
+        .audio-player audio::-webkit-media-controls {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 50px;
+        }
+        
+        .audio-player audio::-webkit-media-controls-play-button {
+          background-color: #007bff;
+          border: none;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          margin-right: 10px;
+          cursor: pointer;
+        }
+        
+        .audio-player audio::-webkit-media-controls-play-button:before {
+          content: '\f04b';
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          font-size: 20px;
+          line-height: 40px;
+          color: #fff;
+        }
+        
+        .audio-player audio::-webkit-media-controls-time-remaining-display {
+          font-size: 14px;
+          color: #007bff;
+          margin-right: 10px;
+        }
+        
+        .audio-player audio::-webkit-media-controls-volume-slider-container {
+          width: 80px;
+          height: 30px;
+        }
+        
+        .audio-player audio::-webkit-media-controls-volume-slider {
+          width: 100%;
+          height: 5px;
+          background-color: #ccc;
+          border-radius: 10px;
+        }
+        
+        .audio-player audio::-webkit-media-controls-volume-slider::-webkit-media-slider-thumb {
+          width: 20px;
+          height: 20px;
+          background-color: #007bff;
+          border-radius: 50%;
+          border: none;
+        }
+        </style>
+        
+        <div class="audio-player mt-5">
+            <audio controls controlsList="nodownload">
+                <source src="{{ podcast.audio_file.url }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        
+    </section>
+
+    <section>
+      
+      
+      
+      
+      
+    </section>
+    <!-- ================================
+    End Content
+    ================================= -->
+    
+
+Ta
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        
+        <div class="social-links text-center text-md-end">      
+          
+          <a href="https://www.youtube.com/@tickettofreedomacademy" class="youtube"><i class="bx bxl-youtube"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=100090500613162" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="https://instagram.com/tickettofreedompodcast?igshid=ZDdkNTZiNTM=" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href=" https://podcasters.spotify.com/pod/show/sylvie-tamanda/episodes/Ep-4--How-to-live-a-happier-and-fulfilled-life-as-a-woman-e22fkkc
+          " target="_blank" class="spotify"><i class="bx bxl-spotify"></i></a>
+          <a href="https://www.linkedin.com/in/sylvie-tamanda-182a2bbb" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+    <!-- </div> -->
+      <div class="social-links text-center text-md-end">
+
+        
+          <h4 style="color:gold;">Join my Community</h4>
+
+          
+          <form id="subscription-form" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+            </div>
+            
+            <div class="form-group mt-2">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            
+            <button id="myButton" class="btn btn-primary mt-2" type="submit">Subscribe</button>
+            <br>
+            
+            
+            {% for message in messages %}
+            <div style="display:none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            color:magenta;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);" id="thankYouMessage">{{message.tags}}</div>
+            
+            {% endfor %}
+          </form>
+          
+          <script>
+            console.log("JavaScript code is being executed.");
+            
+            var form = document.getElementById("subscription-form");
+            var message = document.getElementById("thankYouMessage");
+            var button = document.getElementById("myButton");
+            
+            console.log("form:", form);
+            console.log("message:", message);
+            console.log("button:", button);
+            
+            form.addEventListener("submit", function(event) {
+              event.preventDefault();
+              
+              console.log("Form submitted.");
+              
+              var formData = new FormData(form);
+              
+              button.disabled = true;
+              message.style.display = "none";
+              
+              console.log("formData:", formData);
+              
+              var xhr = new XMLHttpRequest();
+              xhr.open(form.method, form.action);
+              xhr.setRequestHeader("X-CSRFToken", "{{ csrf_token }}");
+              xhr.onload = function() {
+                button.disabled = false;
+                
+                console.log("xhr.onload:", xhr);
+                
+                if (xhr.status === 200) {
+                  message.innerHTML = "Subscribed successfully!";
+                  message.style.display = "block";
+                  form.reset();
+                } else {
+                  message.innerHTML = "An error occurred. Please try again later.";
+                  message.style.display = "block";
+                }
+              };
+              xhr.send(formData);
+            });
+          </script>
+
+          <br>
+       
+          
+      </div>
+    </div>
+          
+          
+          {% comment %} <button id="myButton">Click me</button> {% endcomment %}
+          {% comment %} <div id="thankYouMessage">Thank you for clicking!</div> {% endcomment %}
+          
+          
+        
+        {% if user.is_authenticated %}
+          
+          <a class="btn btn-primary btn-block" href="{% url 'subscription' %}">All</a>
+
+          {% endif %}
+        </div>
+      </div>
+      <center>
+      <div class="credits align-center" style="font-size: 20px;">
+        Powered by <a style="color:gold;" href="">Zilo</a>
+      </div>
+    </center>
+
+
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

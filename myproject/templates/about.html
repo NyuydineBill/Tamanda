@@ -1,0 +1,501 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>podcast</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <!-- <link href="assets/img/favicon.png" rel="icon"> -->
+  <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> -->
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <style>
+    /* Style the popup */
+    .popup {
+        display: none; /* Hide by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 20%;
+        right: 20%;
+        top: 1px;
+        width: 80%;
+        height: 100%;
+        overflow: auto; /* Enable scroll if needed */
+        float:right;
+        /* background-color: rgba(7, 67, 99, 0.5); Black  opacity; */
+    }
+    /* Style the popup content */
+    .popup-content {
+        background-color: rgb(150, 132, 33);
+        margin: 10% auto; /* 10% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+    /* Style the close button */
+    .popup-close {
+        color: green;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .popup-close:hover,
+    .popup-close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+<header id="" class="" style="background-color: grey;">
+  <div class="container d-flex align-items-center">
+    
+    <img class="logo me-auto" style="border-radius: 15px;"  src="{% static 'assets/img/logo.jpg' %}" height="60px;" width="90px;" />
+    <h5 style="color:white; color:white; font-size: xx-large;" class="logo me-auto ">Sylvie Tamanda</h5>
+  <details>
+      <summary style="margin-top: 0px;">
+        <img src="{% static 'assets/img/menu_icon.png' %}"/>
+      </summary>
+      <ul style="height: 200px; width: 160px; padding-left: -1px; padding-right: 20px;">
+        <div style="color:green;" class="container">
+        <div class="row" >
+          <li><a style="color:green;" href="{% url 'index' %}">Home</a></li>
+          <li><a style="color:green;" href="{% url 'about' %}">About Me</a></li>
+          <li><a style="color:green;" href="{% url 'blog' %}">Blog</a></li>
+            <li><a style="color:green;" href="https://www.youtube.com/@tickettofreedomacademy">Youtube</a></li>
+            <li><a style="color:green;" href="{% url 'courses' %}">Courses</a></li>
+            <li><a style="color:green;" href="{% url 'products' %}">Products</a></li>
+            <li><a style="color:green;" href="{% url 'events' %}">Events</a></li>
+          </div>
+        </div>
+      </ul>
+    </details>
+  </div>
+</header><!-- End Header -->
+
+<!-- End Header -->
+
+    <!-- ======= Services Section ======= -->
+ <div class="container bg-light mt-5">
+    <h1 class="text-center bg-light" style="color:orange; font-size:65px;">ABOUT ME</h1>
+    <h3 class="mt-5">In August last year 2022, I attended the Time to Thrive Challenge organised by Dean Graziosi and Tony Robbins.
+        I went all in and played full out!
+        </h3>
+
+    <h3 class="mt-5">After the challenge, I took up the offer to gain more knowledge and exposure in this industry that I was starting to fall in love with. So I purchased "Project Next" and committed to completing the course within a set number of days.
+        After its completion, I was ushered into a new industry that was borderless—the coaching industry.
+        </h3>
+
+    <h3 class="mt-5">Before leaving Africa in 2019, I must admit that I had never heard about this industry. In my native Cameroon, when someone gave you directions on how to go about your life or business, they were considered a wise elder.
+        Due to this traditional limitation inscribed in me through my upbringing and community values, I unconsciously fell into the imposter syndrome trap.
+        </h3>
+
+    <h3 class="mt-5 bg-dark">
+        <center><b>
+            ⦁	"I can't be a coach, I said to myself. I am only 33 and surely not old enough to be <br> considered an elder." Those words played over and over in my head.
+        </b>
+        </center>
+
+    </h3>
+
+    <h3 class="mt-5">However, whilst my mind was on a battlefield with ancient myths and my own limitations, there was a major shift happening around me.
+    </h3>
+
+    <h3 class="mt-5">
+        On that day, whilst looking into the mirror, I was able to remove myself from the moment and look at my life journey from the outside in.
+        Based on the African standard and in a healthy competitive relationship with my peers, I had achieved a lot. And despite losing my dad at 16
+        	
+        ️
+    </h3>
+
+    <h3 class="ml-3 align-center" style="margin-left:50px;">
+        
+⦁	
+️𝐈 𝐡𝐚𝐝 𝐦𝐲 𝐡𝐢𝐠𝐡𝐞𝐫 𝐧𝐚𝐭𝐢𝐨𝐧𝐚𝐥 𝐝𝐢𝐩𝐥𝐨𝐦𝐚 𝐚𝐭 𝟏𝟗. 
+<br><br>
+⦁	𝐀𝐭 𝐭𝐡𝐞 𝐚𝐠𝐞 𝐨𝐟 𝟏𝟗, 𝐈 𝐥𝐚𝐧𝐝𝐞𝐝 𝐦𝐲 𝐟𝐢𝐫𝐬𝐭 "𝐣𝐨𝐛" 𝐢𝐧 𝐦𝐢𝐜𝐫𝐨𝐟𝐢𝐧𝐚𝐧𝐜𝐞. ️ 
+<br><br>
+⦁	𝐁𝐞𝐜𝐚𝐦𝐞 𝐚 𝐟𝐢𝐧𝐚𝐧𝐜𝐞 𝐦𝐚𝐧𝐚𝐠𝐞𝐫 𝐚𝐭 𝐚𝐠𝐞 𝟐𝟎, 𝐞𝐚𝐫𝐧𝐢𝐧𝐠 𝐦𝐨𝐫𝐞 𝐦𝐨𝐧𝐞𝐲 𝐭𝐡𝐚𝐧 𝐈 𝐜𝐨𝐮𝐥𝐝 𝐫𝐞𝐚𝐥𝐥𝐲 𝐬𝐩𝐞𝐧𝐝. 
+<br><br>
+⦁	𝐖𝐡𝐢𝐥𝐬𝐭 𝐰𝐨𝐫𝐤𝐢𝐧𝐠 𝐚 𝟗 𝐭𝐨 𝟓, 𝐈 𝐚𝐭𝐭𝐞𝐧𝐝𝐞𝐝 𝐞𝐯𝐞𝐧𝐢𝐧𝐠 𝐬𝐜𝐡𝐨𝐨𝐥 𝐚𝐧𝐝 𝐠𝐨𝐭 𝐦𝐲 𝐛𝐚𝐜𝐡𝐞𝐥𝐨𝐫'𝐬 𝐝𝐞𝐠𝐫𝐞𝐞 𝐢𝐧 𝐚𝐜𝐜𝐨𝐮𝐧𝐭𝐢𝐧𝐠, 𝐟𝐢𝐧𝐚𝐧𝐜𝐞, 𝐚𝐧𝐝 𝐀𝐮𝐝𝐢𝐭. 
+<br><br>
+⦁	𝐀𝐭 𝟐𝟏, 𝐈 𝐛𝐨𝐮𝐠𝐡𝐭 𝐦𝐲 𝐟𝐢𝐫𝐬𝐭 𝐜𝐚𝐫.
+<br><br>
+⦁	𝐀𝐭 𝐚𝐠𝐞 𝟐𝟏, 𝐈 𝐫𝐞𝐠𝐢𝐬𝐭𝐞𝐫𝐞𝐝 𝐦𝐲 𝐟𝐢𝐫𝐬𝐭 𝐩𝐫𝐢𝐯𝐚𝐭𝐞 𝐥𝐢𝐦𝐢𝐭𝐞𝐝 𝐥𝐢𝐚𝐛𝐢𝐥𝐢𝐭𝐲 𝐜𝐨𝐦𝐩𝐚𝐧𝐲 𝐭𝐨 𝐛𝐢𝐝 𝐟𝐨𝐫 𝐩𝐮𝐛𝐥𝐢𝐜 𝐜𝐨𝐧𝐭𝐫𝐚𝐜𝐭𝐬 𝐢𝐧 𝐃𝐨𝐮𝐚𝐥𝐚, 𝐭𝐡𝐞 𝐞𝐜𝐨𝐧𝐨𝐦𝐢𝐜 𝐜𝐚𝐩𝐢𝐭𝐚𝐥 𝐨𝐟 𝐦𝐲 𝐜𝐨𝐮𝐧𝐭𝐫𝐲. 
+<br><br>
+⦁	𝐀𝐧𝐝 𝐚𝐥𝐭𝐡𝐨𝐮𝐠𝐡 𝐦𝐲 𝐜𝐨𝐦𝐩𝐚𝐧𝐲 𝐝𝐢𝐝 𝐧𝐨𝐭 𝐭𝐚𝐤𝐞 𝐨𝐟𝐟 𝐝𝐮𝐞 𝐭𝐨 𝐜𝐢𝐫𝐜𝐮𝐦𝐬𝐭𝐚𝐧𝐜𝐞𝐬 𝐛𝐞𝐲𝐨𝐧𝐝 𝐦𝐲 𝐜𝐨𝐧𝐭𝐫𝐨𝐥, 𝐈 𝐝𝐢𝐝𝐧'𝐭 𝐝𝐰𝐞𝐥𝐥 𝐭𝐨𝐨 𝐦𝐮𝐜𝐡 𝐨𝐧 𝐢𝐭. 
+<br><br>
+⦁	
+️ 𝐈 𝐦𝐨𝐯𝐞𝐝 𝐨𝐧 𝐚𝐧𝐝 𝐠𝐨𝐭 𝐦𝐲𝐬𝐞𝐥𝐟 𝐢𝐧𝐭𝐨 𝐦𝐮𝐥𝐭𝐢𝐥𝐞𝐯𝐞𝐥 𝐦𝐚𝐫𝐤𝐞𝐭𝐢𝐧𝐠, 𝐈 𝐬𝐨𝐥𝐝 𝐜𝐥𝐨𝐭𝐡𝐞𝐬 𝐚𝐧𝐝 𝐣𝐞𝐰𝐞𝐥𝐥𝐞𝐫𝐲 𝐟𝐫𝐨𝐦 𝐒𝐨𝐮𝐭𝐡 𝐚𝐟𝐫𝐢𝐜𝐚, 𝐖𝐞𝐝𝐝𝐢𝐧𝐠 𝐠𝐨𝐰𝐧𝐬 𝐟𝐫𝐨𝐦 𝐂𝐚𝐧𝐚𝐝𝐚 𝐰𝐡𝐢𝐥𝐞 𝐣𝐨𝐛 𝐡𝐮𝐧𝐭𝐢𝐧𝐠.
+<br><br>
+⦁	𝐀𝐭 𝟐𝟐, 𝐈 𝐰𝐞𝐥𝐜𝐨𝐦𝐞𝐝 𝐦𝐲 𝐟𝐢𝐫𝐬𝐭 𝐬𝐨𝐧 𝐢𝐧𝐭𝐨 𝐦𝐲 𝐥𝐢𝐟𝐞 𝐚𝐧𝐝 𝐊𝐞𝐩𝐭 𝐩𝐮𝐬𝐡𝐢𝐧𝐠 𝐭𝐡𝐫𝐨𝐮𝐠𝐡 𝐭𝐡𝐞 𝐬𝐭𝐨𝐫𝐦𝐬 𝐨𝐟 𝐥𝐢𝐟𝐞.
+
+    </h3>
+
+    <h3 class="mt-5">By the time I hit 30, I had worked for three different companies in diverse roles, such as
+      <br><br>
+      <h3 style="margin-left: 50px;">
+
+        ⦁	𝑩𝒖𝒔𝒊𝒏𝒆𝒔𝒔 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒎𝒆𝒏𝒕 𝑴𝒂𝒏𝒂𝒈𝒆𝒓
+        <br><br>
+        ⦁	𝑬𝒙𝒆𝒄𝒖𝒕𝒊𝒗𝒆 𝒄𝒍𝒊𝒆𝒏𝒕 𝒎𝒂𝒏𝒂𝒈𝒆𝒓
+        <br><br>
+        ⦁	𝑨𝒏𝒅 𝒎𝒚 𝒍𝒂𝒔𝒕 𝒓𝒐𝒍𝒆 𝒃𝒆𝒇𝒐𝒓𝒆 𝑰 𝒍𝒆𝒇𝒕 𝑪𝒂𝒎𝒆𝒓𝒐𝒐𝒏 𝒘𝒂𝒔 𝒂𝒔 𝒇𝒊𝒏𝒂𝒏𝒄𝒆 𝒎𝒂𝒏𝒂𝒈𝒆𝒓 𝒇𝒐𝒓 𝒂 𝒎𝒖𝒍𝒕𝒊𝒏𝒂𝒕𝒊𝒐𝒏𝒂𝒍 𝒄𝒐𝒓𝒑𝒐𝒓𝒂𝒕𝒊𝒐𝒏.
+      </h3>
+
+    </h3>
+    <h3 class="mt-5 align-center bg-dark">
+        <center><b>
+
+            𝐀𝐭 𝐭𝐡𝐢𝐬 𝐩𝐨𝐢𝐧𝐭, 𝐈 𝐰𝐚𝐬 𝐥𝐨𝐨𝐤𝐢𝐧𝐠 𝐚𝐭 𝐭𝐡𝐢𝐬 𝐰𝐨𝐦𝐚𝐧 𝐢𝐧𝐟𝐫𝐨𝐧𝐭 𝐨𝐟 𝐭𝐡𝐞 𝐦𝐢𝐫𝐫𝐨𝐫 𝐚𝐧𝐝 𝐰𝐨𝐧𝐝𝐞𝐫𝐢𝐧𝐠, <br> "𝐇𝐨𝐰 𝐨𝐧 𝐞𝐚𝐫𝐭𝐡 𝐰𝐨𝐮𝐥𝐝 𝐬𝐡𝐞 𝐬𝐚𝐲, 𝐝𝐞𝐬𝐩𝐢𝐭𝐞 𝐡𝐞𝐫 𝐝𝐞𝐜𝐚𝐝𝐞 𝐨𝐟 𝐞𝐱𝐩𝐞𝐫𝐢𝐞𝐧𝐜𝐞, 𝐭𝐡𝐚𝐭 𝐬𝐡𝐞 𝐰𝐚𝐬 𝐧𝐨𝐭 𝐰𝐨𝐫𝐭𝐡𝐲 𝐭𝐨 𝐛𝐞 𝐜𝐚𝐥𝐥𝐞𝐝 𝐚 𝐜𝐨𝐚𝐜𝐡?"
+        </b>
+
+        </center>
+        
+      </h3>
+
+    <h3 class="mt-5">
+        I had always wanted an MBA before I turned 30, so I applied to a few universities and got my first admission into the German University of Cairo in Egypt.
+
+    </h3>
+
+    <h3 class="mt-5">
+        So I resigned from my role as finance manager and relocated. I lived in Egypt for 2 years studying business management MBA, before getting another offer to study at Coventry University in London.
+
+    </h3>
+
+    <h3 class="mt-5">
+        <center>
+            While preparing for my interview, I found out I was pregnant with my second son and that I may have to choose between nurturing my newborn and my Global Business MBA course. <br>
+⦁	I didn't want to give up either, so I pushed through the process.
+
+        </center>
+    </h3>
+    
+    <h3 class="mt-5">
+        <br>
+        <b>        Just after I got my visa, my son was born, and I faced the hardest decision of my life.
+            Leave him at 3 months old or forgo the MBA.</b>
+    </h3>
+
+    </h3>
+
+    <h3 style="margin-left:50px;" class="mt-5">
+        ⦁	I faced backlash for even contemplating leaving him at such a tender age. He was going to be raised by my mom, the same woman who raised me, so why was it such a hard decision to make?
+        Well, it turns out I got on that plane and left.
+        <br><br>
+        ⦁   Did I mention that 7 days after my son was born, I had a launch day for my new restaurant project, which turned out to be a very successful venture, at least while I was on the ground?
+        <br><br>
+       ⦁	I landed in London in January of 2019 with my t-shirt covered in breast milk from my licky boobs. My newborn was looking for mommy, and mommy was in another part of the world.
+       
+    </h3>
+
+    <h3 class="mt-5"><b>
+
+        Because of that traumatic separation, I vowed to make baby Kuden proud. I limited myself to two activities: studies and part-time work.
+    </b>
+
+    </h3>
+
+    <h3 class="mt-5">
+    <center><b>
+
+        
+        12 months later, I crushed my MBA with 10 As and got a distinction degree.<br><br>
+        Instead of transitioning into a blissful career, COVID 19 ruined my plans to secure a good job.<br><br>
+        First the furlough and then the lockdowns.. dear oh dear..<br><br>
+        By this time, both my kids had joined me in the UK. I found myself in uncharted territory; locked up inside a tight British home with 2 young boys was no fun.<br><br>
+        Hours turned into days, and days into weeks. Stay home the government reiterated. <br><br>
+        Something unexpected happened. Frustrations turned into tears, and tears into depression, and depression into suicide. You read that right. I no longer wanted to be here.<br><br>
+        But God had a plan for my life.<br><br>
+    </b> 
+    </center>
+        
+    </h3>
+
+    <h3 class="mt-5">
+        ⦁	With the help of a coach whom I found randomly whilst watching self-help YouTube videos, I picked myself up and started a business with my mobile phone and from home.
+
+    </h3>
+
+    <h3 class="mt-5 bg-dark">
+        <b>
+
+            𝑩𝒚 𝑵𝒐𝒗𝒆𝒎𝒃𝒆𝒓 2021, 𝑰 𝒉𝒂𝒅 $2500, 𝒘𝒉𝒊𝒄𝒉 𝑰 𝒑𝒖𝒕 𝒊𝒏𝒕𝒐 𝒎𝒚 𝒏𝒆𝒘 𝒃𝒖𝒔𝒊𝒏𝒆𝒔𝒔 𝒗𝒆𝒏𝒕𝒖𝒓𝒆. 𝑨𝒍𝒕𝒉𝒐𝒖𝒈𝒉 𝒊𝒕 𝒘𝒂𝒔𝒏'𝒕 𝒂 𝒔𝒎𝒐𝒐𝒕𝒉 𝒕𝒂𝒌𝒆𝒐𝒇𝒇, 𝑰 𝒍𝒆𝒗𝒆𝒓𝒂𝒈𝒆𝒅 𝒂𝒍𝒍 𝒕𝒉𝒆 𝒃𝒖𝒔𝒊𝒏𝒆𝒔𝒔 𝒂𝒄𝒖𝒎𝒆𝒏 𝒇𝒓𝒐𝒎 𝒂𝒍𝒍 𝒎𝒚 𝒚𝒆𝒂𝒓𝒔 𝒐𝒇 𝒘𝒐𝒓𝒌, 𝒂𝒏𝒅 12 𝒎𝒐𝒏𝒕𝒉𝒔 𝒍𝒂𝒕𝒆𝒓, 𝑰 𝒉𝒂𝒅 𝒉𝒊𝒕 $80𝒌 𝒊𝒏 𝒓𝒆𝒗𝒆𝒏𝒖𝒆, 𝒂𝒏𝒅 𝒃𝒚 𝒕𝒉𝒆 𝒇𝒊𝒓𝒔𝒕 𝒘𝒆𝒆𝒌 𝒐𝒇 2023, 𝒊𝒕 𝒘𝒂𝒔 $130𝒌 𝒂𝒏𝒅 𝒈𝒓𝒐𝒘𝒊𝒏𝒈.
+        </b>
+
+    </h3>
+
+    <h2 class="mt-5">
+        <b><i>
+        <center>
+
+            My overall portfolio has expanded, and I am amazed by my results.
+            Here's how my $2500 initial investment has become the gift that keeps giving:
+
+        </center>    
+        </i></b>
+
+    </h2>
+
+    <h3>
+
+        ⦁ Being able to pay for coaching programmes for my continuous growth.
+        <br><br>
+        ⦁ It funded my sister's travel from Cameroon to London and pays for her petroleum and chemical engineering tuition at a reputable university in London.
+        <br><br>
+        ⦁ I bought some stocks on the stock market, which I plan to hold for a few years.
+        <br><br> 
+        ⦁ I invested in a logistics business that now pays me a fixed monthly income of $2000.
+        <br><br>
+        ⦁ I wrote and self-published my first book, translated into french, Spanish and German, has sold over 100 copies and received some heartwarming and amazing feedback.
+        <br><br>
+        ⦁ I also hired expert talent to create other income-generating digital products.
+        <br><br> 
+        ⦁ I bought the equipment to start my YouTube channel.
+        <br><br> 
+        ⦁ I made some charitable donations.
+       
+    </h3>
+
+
+    <h3 class="mt-5 bg-dark">
+        <b>
+            
+ I couldn't have done much without the first coach I came across, if I hadn't believed in myself, and if I hadn't started my business.
+
+        </b>
+    </h3>
+
+    <h4 class="mt-5">
+        So despite achieving all these things, why was I still feeling unworthy? 
+            <br><br>
+        Then I realised it truly was FEAR and not even a lack of self-confidence. I have always been a confident person, so somewhere I was afraid of the unknown.
+            <br><br>
+        But guess what? I didn't let that stop me.
+
+    </h4>
+
+
+    <h3 class="mt-5 bg-dark">
+        <b>
+            𝐎𝐧 𝐃𝐞𝐜𝐞𝐦𝐛𝐞𝐫 𝟒, 𝟐𝟎𝟐𝟐, 𝐈 𝐭𝐨𝐥𝐝 𝐭𝐡𝐞 𝐰𝐨𝐫𝐥𝐝 𝐭𝐡𝐚𝐭 𝐈 𝐰𝐚𝐬 𝐰𝐨𝐫𝐭𝐡𝐲 𝐨𝐟 𝐛𝐞𝐢𝐧𝐠 𝐜𝐚𝐥𝐥𝐞𝐝 𝐚 𝐜𝐨𝐚𝐜𝐡, 𝐧𝐨𝐭 𝐛𝐞𝐜𝐚𝐮𝐬𝐞 𝐈 𝐟𝐚𝐧𝐜𝐢𝐞𝐝 𝐦𝐲 𝐧𝐞𝐰 𝐩𝐫𝐨𝐟𝐞𝐬𝐬𝐢𝐨𝐧 𝐛𝐮𝐭 𝐛𝐞𝐜𝐚𝐮𝐬𝐞 𝐈 𝐓𝐑𝐔𝐋𝐘 𝐛𝐞𝐥𝐢𝐞𝐯𝐞𝐝 𝐭𝐡𝐚𝐭 𝐈 𝐡𝐚𝐝 𝐞𝐯𝐞𝐫𝐲𝐭𝐡𝐢𝐧𝐠 𝐢𝐭 𝐭𝐨𝐨𝐤 𝐭𝐨 𝐭𝐞𝐚𝐜𝐡 𝐨𝐭𝐡𝐞𝐫 𝐰𝐨𝐦𝐞𝐧 𝐭𝐨 𝐟𝐨𝐥𝐥𝐨𝐰 𝐭𝐡𝐞 𝐩𝐚𝐭𝐡 𝐭𝐡𝐚𝐭 𝐈 𝐡𝐚𝐝 𝐟𝐨𝐥𝐥𝐨𝐰𝐞𝐝 𝐢𝐧 𝐨𝐫𝐝𝐞𝐫 𝐭𝐨 𝐛𝐞 𝐞𝐦𝐩𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐞𝐯𝐞𝐫𝐲𝐭𝐡𝐢𝐧𝐠 𝐭𝐡𝐚𝐭 𝐈 𝐡𝐚𝐝 𝐨𝐯𝐞𝐫𝐩𝐨𝐰𝐞𝐫𝐞𝐝. 
+
+        </b>
+    </h3>
+
+    <h3 class="mt-5">
+        In January of 2023, I had my first paying client, and as I write this, I have had the privilege of coaching over 10 amazing individuals who are each trying to fulfil their dreams while creating tremendous value in our world.
+
+    </h3>
+
+
+    <h3 class="mt-5">
+
+        This new path is one of self-discovery, continuous personal development, and learning, as much as it is one of impact!
+            <br><br>
+         I want to be remembered for my impact on the lives of those who crossed paths with me on earth.
+         <br><br>
+         My clients love working with me, and I am head over heels in love with them and their businesses too. This alone fulfils me!
+         <br><br>
+         If you read this to the end, I would like to offer you a 1-hour free business coaching power session. Send me a direct message, and let's make this year your year of new ventures.
+         <br><br>
+            
+    </h3>
+
+    <h1>
+        <p>
+
+            Take care and stay blessed!
+        </p>
+        <br><br>
+<b>
+
+    <p class="text-md-end">
+
+        Sylvie Tamanda 
+        <br><br>
+        Business coach
+    </p>
+</b>
+    </h1>
+</div>
+Ta
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        
+        <div class="social-links text-center text-md-end">      
+          
+          <a href="https://www.youtube.com/@tickettofreedomacademy" class="youtube"><i class="bx bxl-youtube"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=100090500613162" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="https://instagram.com/tickettofreedompodcast?igshid=ZDdkNTZiNTM=" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href=" https://podcasters.spotify.com/pod/show/sylvie-tamanda/episodes/Ep-4--How-to-live-a-happier-and-fulfilled-life-as-a-woman-e22fkkc
+          " target="_blank" class="spotify"><i class="bx bxl-spotify"></i></a>
+          <a href="https://www.linkedin.com/in/sylvie-tamanda-182a2bbb" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+    <!-- </div> -->
+      <div class="social-links text-center text-md-end">
+
+        
+          <h4 style="color:gold;">Join my Community</h4>
+
+          
+          <form id="subscription-form" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+            </div>
+            
+            <div class="form-group mt-2">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            
+            <button id="myButton" class="btn btn-primary mt-2" type="submit">Subscribe</button>
+            <br>
+            
+            
+            {% for message in messages %}
+            <div style="display:none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            color:magenta;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);" id="thankYouMessage">{{message.tags}}</div>
+            
+            {% endfor %}
+          </form>
+          
+          <script>
+            console.log("JavaScript code is being executed.");
+            
+            var form = document.getElementById("subscription-form");
+            var message = document.getElementById("thankYouMessage");
+            var button = document.getElementById("myButton");
+            
+            console.log("form:", form);
+            console.log("message:", message);
+            console.log("button:", button);
+            
+            form.addEventListener("submit", function(event) {
+              event.preventDefault();
+              
+              console.log("Form submitted.");
+              
+              var formData = new FormData(form);
+              
+              button.disabled = true;
+              message.style.display = "none";
+              
+              console.log("formData:", formData);
+              
+              var xhr = new XMLHttpRequest();
+              xhr.open(form.method, form.action);
+              xhr.setRequestHeader("X-CSRFToken", "{{ csrf_token }}");
+              xhr.onload = function() {
+                button.disabled = false;
+                
+                console.log("xhr.onload:", xhr);
+                
+                if (xhr.status === 200) {
+                  message.innerHTML = "Subscribed successfully!";
+                  message.style.display = "block";
+                  form.reset();
+                } else {
+                  message.innerHTML = "An error occurred. Please try again later.";
+                  message.style.display = "block";
+                }
+              };
+              xhr.send(formData);
+            });
+          </script>
+
+          <br>
+       
+          
+      </div>
+    </div>
+          
+          
+          {% comment %} <button id="myButton">Click me</button> {% endcomment %}
+          {% comment %} <div id="thankYouMessage">Thank you for clicking!</div> {% endcomment %}
+          
+          
+        
+        {% if user.is_authenticated %}
+          
+          <a class="btn btn-primary btn-block" href="{% url 'subscription' %}">All</a>
+
+          {% endif %}
+        </div>
+      </div>
+      <center>
+      <div class="credits align-center" style="font-size: 20px;">
+        Powered by <a style="color:gold;" href="">Zilo</a>
+      </div>
+    </center>
+
+
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

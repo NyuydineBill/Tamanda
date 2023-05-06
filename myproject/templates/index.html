@@ -1,0 +1,612 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Sylvie</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <!-- <link href="assets/img/favicon.png" rel="icon"> -->
+  <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> -->
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <style>
+    /* Style the popup */
+    .popup {
+        display: none; /* Hide by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 20%;
+        right: 20%;
+        top: 1px;
+        width: 80%;
+        height: 100%;
+        overflow: auto; /* Enable scroll if needed */
+        float:right;
+        /* background-color: rgba(7, 67, 99, 0.5); Black  opacity; */
+    }
+    /* Style the popup content */
+    .popup-content {
+        background-color: rgb(150, 132, 33);
+        margin: 10% auto; /* 10% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+    /* Style the close button */
+    .popup-close {
+        color: green;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .popup-close:hover,
+    .popup-close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+<header id="" class="" style="background-color: #c4c4c4;">
+  <div class="container d-flex align-items-center">
+    
+    <img class="logo me-auto" style="border-radius: 15px;"  src="{% static 'assets/img/logo.jpg' %}" height="60px;" width="90px;" />
+    <h5 style="color:white; color:black; font-size: xx-large;" class="logo me-auto "><b><strong>Sylvie Tamanda</strong></b></h5>
+  <details>
+      <summary style="">
+        <img src="{% static 'assets/img/menu_icon.png' %}"/>
+      </summary>
+      <ul style="height: 200px; width: 160px; padding-left: -1px; padding-right: 20px;">
+        <div style="color:green;" class="container">
+        <div class="row" >
+          <li><a style="color:green;" href="{% url 'about' %}">About Me</a></li>
+          <li><a style="color:green;" href="{% url 'blog' %}">Blog</a></li>
+            <li><a style="color:green;" href="https://anchor.fm/sylvie-tamanda?utm_source=web&utm_campaign=web-share&utm_medium=sharing&%24web_only=true&_branch_match_id=1014947443770109628&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXLy7IL8lMq0zMS87IL9ItT03SSywo0MvJzMvWT9U3TgoL9HIOLawsTwIAKQpcFTAAAAA%3D">PodCast</a></li>
+            <li><a style="color:green;" href="https://www.youtube.com/@tickettofreedomacademy">Youtube</a></li>
+            <li><a style="color:green;" href="{% url 'courses' %}">Courses</a></li>
+            <li><a style="color:green;" href="{% url 'products' %}">Products</a></li>
+            <li><a style="color:green;" href="{% url 'events' %}">Events</a></li>
+          </div>
+        </div>
+      </ul>
+    </details>
+  </div>
+</header><!-- End Header -->
+
+<!-- End Header -->
+
+
+<center>
+<div class="popup" id="welcome-popup">
+  <div class="popup-content">
+      <span class="popup-close">&times;</span>
+      <h2 style="color:white;">Welcome to my website!</h2>
+      <p style="color:white;">Thank you for visiting my website. We hope you find what you're looking for.</p>
+      <p style="color:white;">Get a free ebook today</p>
+
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Download PDF
+      </button>
+    </div>
+  </div>
+</center>
+
+<script>
+  // Get the popup
+  var popup = document.getElementById("welcome-popup");
+  
+  // Get the close button
+  var closeButton = document.getElementsByClassName("popup-close")[0];
+  
+  // When the window is loaded, display the popup
+  window.onload = function() {
+      popup.style.display = "block";
+  }
+  
+  // When the user clicks on the close button, hide the popup
+  closeButton.onclick = function() {
+      popup.style.display = "none";
+  }
+</script>
+
+
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Join Cummunity</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        </a>
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    
+    
+    
+    
+    <div class="modal-body">
+      
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+          </div>
+          
+          <div class="form-group mt-2">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <button id="myButton" class="btn btn-primary mt-2" type="submit">Subscribe</button>
+         
+         
+          
+          <br>
+          
+          
+          {% for message in messages %}
+          <div style="display:none;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          color:magenta;
+          transform: translate(-50%, -50%);
+          z-index: 9999;
+          background-color: #fff;
+          border: 1px solid #ccc;
+          padding: 20px;
+          box-shadow: 0 0 10px rgba(0,0,0,0.5);" id="thankYouMessage">{{message.tags}}</div>
+          
+          {% endfor %}
+        </form>
+
+
+        
+      </div>
+      {% comment %} <div  class="modal-footer"> {% endcomment %}
+        {% comment %} <b  tton type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> {% endcomment %}
+        {% comment %} <b  tton type="button" class="btn btn-primary">Save changes</button> {% endcomment %}
+      {% comment %} </di  > {% endcomment %}
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-whiter" style="background-color: #f5f5f5; background-image: url('https://example.com/images/background.jpg'); background-size: cover; background-color: #c4c4c4;">
+  <div class="row align-items-center features-item">
+    <div class="col-md-5">
+      <img src="{% static 'assets/img/sylvie.png' %}" height=200 class="img-fluid d-block mx-auto my-5" alt="">
+    </div>
+    <div class="col-md-7">
+      {% comment %} <h1 class="display-4 mb-4">Welcome to my website!</h1> {% endcomment %}
+      {% comment %} <p class="lead mb-5"> {% endcomment %}
+        {% comment %} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod ante vel ante sagittis porta. Sed tincidunt, nibh sit amet tincidunt feugiat, ligula velit sagittis sapien, quis varius velit libero ac odio. Fusce interdum felis et nulla consectetur luctus.  {% endcomment %}
+      {% comment %} </p> {% endcomment %}
+      {% comment %} <a href="#" class="btn btn-primary btn-lg">Sign up for our newsletter</a> {% endcomment %}
+
+
+      <div class="col-lg-8 order-2 order-lg-1 d-flex flex-column justify-content-center order-1 order-lg-2 col-md-12 col-sm-12" style="color:rgb(2, 43, 2);">
+        <b><h3 class="text-center">Heya, it's my plum pleasing to meet you!</h3></b>
+        <br>
+        <p class="text-center" id="text" style="font-size: 18px;">
+          
+        <b> I &nbsp; am  &nbsp; <b><strong>Sylvie</strong></b>  &nbsp; <b><strong>Tamanda</strong></b>  &nbsp; a  &nbsp; business  &nbsp; coach,  &nbsp; <br> Entrepreneur, &nbsp;Author, &nbsp; Youtuber, &nbsp; Educator, &nbsp; <br> Mother, &nbsp; Sister, &nbsp; a &nbsp; serial &nbsp; personal &nbsp; developer &nbsp; <br> and &nbsp; the &nbsp; most &nbsp; resilient &nbsp; human &nbsp; being &nbsp; you'll &nbsp; <br> ever &nbsp; come &nbsp; across.</h5></b>
+         
+         <b><br><br><br>I'm&nbsp; so&nbsp; glad&nbsp; you&nbsp; came&nbsp; across&nbsp; me&nbsp; </h5></b>
+         <br>
+            <b>Now&nbsp; let's&nbsp; get&nbsp; cracking&nbsp;</h5> </b>
+        </p>
+        <script>
+          const text = document.getElementById("text");
+          const letters = text.innerText.split("");
+          text.innerText = "";
+          letters.forEach((letter, i) => {
+            setTimeout(() => {
+              text.innerText += letter;
+            }, 55 * i);
+          });
+        </script>
+      </div>
+      {% comment %} <center> {% endcomment %}
+        {% comment %} <a href="#about" style="background-color: gold; border-radius: 20px;" class="text-center btn-get-started scrollto text-center mt-5" style="color:green;">Join my Community</a> {% endcomment %}
+      {% comment %} </center> {% endcomment %}
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  </div>
+  <main id="main">
+    <!-- ======= About Section ======= -->
+    <div class="container d-flex justify-content-center mt-5 font-weight-bold" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+      <b>
+        <center>
+          “The  SECRET INGREDIENT to finding balance as an independent woman <br> is taking responsibility for your LIFE'S OBJECTIVES and steering <br> them in the right direction without SEEKING PERMISSION  from anyone”
+        </center>
+
+      </b>
+    </div>
+
+    <!-- ======= Services Section ======= -->
+
+    <section id="services" class="services section-bg bg">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="" md-6
+              data-aos="fade-up" data-aos-delay="100">
+              
+              <h4>
+                <b style="font-size: xx-large; color:green;">LATEST</b>     <a class="btn btn-danger mx-4" style="font-size: x-large; background-color: gold;;" href="{% url 'courses' %}">    View all</a></h4>
+              <p style="margin-left: 90px; font-size: 50px;" class="">Blog</p>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-5">
+            
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+    
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  <img height=300 src="{{blog.image.url}}" class="img-fluid" alt="{{blog.title}}">
+                </div>
+                <div class="col-md-8">
+                  <h5 class="text-center"><b>{{blog.title}}</b></h5>
+                  <h5 class="text-center">{{course.date_createds|date:"Y-m-d"}}</h5>
+                </div>
+              </div>
+    
+    
+        </div>
+      </div>
+    </section><!-- End Services Section -->
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ======= Counts Section ======= -->
+  <section id="" class="">
+    <div style="background-color: white;" class="container" id="white" data-aos="fade-up">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="" data-aos="fade-up" data-aos-delay="100">
+            
+            <h4>
+              <b style="font-size: xx-large; color:green;">LATEST</b>     <a class="btn btn-danger mx-4" style="font-size: x-large; background-color: gold;" href="{% url 'products' %}">    View all</a></h4>
+            <p style="margin-left: 90px; font-size: 50px;" class="">Products</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Counts Section -->
+  
+        <!-- ======= Services Section ======= -->
+<section id="services" class="services section-bg ">
+  <div class="container" data-aos="fade-up">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="" data-aos="fade-up" data-aos-delay="100">
+          
+          <h4>
+            <b style="font-size: xx-large; color:green;">LATEST</b>     <a class="btn btn-danger mx-4" style="font-size: x-large; background-color: gold;" href="https://anchor.fm/sylvie-tamanda?utm_source=web&utm_campaign=web-share&utm_medium=sharing&%24web_only=true&_branch_match_id=1014947443770109628&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXLy7IL8lMq0zMS87IL9ItT03SSywo0MvJzMvWT9U3TgoL9HIOLawsTwIAKQpcFTAAAAA%3D">    View all</a></h4>
+            <p style="margin-left: 40px; font-size: 50px;" class="">PodCast</p>
+          </div>
+        </div>
+        <div class="col-md-4 mt-4 mt-md-5">
+          
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+            <div class="image">
+              {% comment %} <h5 class="text-center">{{podcast.ttitles}}</h5> {% endcomment %}
+              <span>
+                <img class="img-thumbnail mx-auto d-block" src="{% static 'assets/img/imagepodcast.jpg' %}" height=50 width=300 />
+            {% comment %} </span> {% endcomment %}
+          </div>
+
+          {% comment %} <p>{{podcast.ccontents|truncatechars:200}}</p> {% endcomment %}
+          <img src="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- End Services Section -->
+
+<section id="" class="">
+  <div style="background-color: white;" class="container" id="white" data-aos="fade-up">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="" data-aos="fade-up" data-aos-delay="100">
+          
+          <h4>
+            <b style="font-size: xx-large; color:green;">UPCOMING/PAST</b>     <a class="btn btn-danger mx-4" style="font-size: x-large; background-color: gold;" href="{% url 'events' %}">    View all</a></h4>
+          <p style="margin-left: 90px; font-size: 50px;" class="">Events</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- End Counts Section -->
+
+
+
+
+<section id="services" class="services section-bg bg">
+  <div class="container" data-aos="fade-up">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="" md-6
+          data-aos="fade-up" data-aos-delay="100">
+          
+          <h4>
+            <b style="font-size: xx-large; color:green;">LATEST</b>     <a class="btn btn-danger mx-4" style="font-size: x-large; background-color: gold;;" href="{% url 'courses' %}">    View all</a></h4>
+          <p style="margin-left: 90px; font-size: 50px;" class="">Courses</p>
+        </div>
+      </div>
+      <div class="col-md-6 mt-4 mt-md-5">
+        
+        <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="row align-items-center">
+            <div class="col-md-4">
+              <img src="{{course.image.url}}" class="img-fluid" alt="{{course.tit}}">
+            </div>
+            <div class="col-md-8">
+              <h5 class="text-center"><b>{{course.tit}}</b></h5>
+              <h5 class="text-center">{{course.date_createds|date:"Y-m-d"}}</h5>
+            </div>
+          </div>
+
+
+    </div>
+  </div>
+</section><!-- End Services Section -->
+
+
+
+
+
+
+
+
+
+
+<!-- ======= Testimonials Section ======= -->
+<section id="testimonials" class="testimonials">
+
+  <div class="container" data-aos="fade-up">
+    
+    <div class="section-title">
+      <h2>Testimonies</h2>
+      
+      {% if user.is_authenticated %}
+        <div class="container">
+          welcome<b> {{user.username}}</b> Manage your Testimonies <a class="btn btn-primary" href="{% url 'add_testimonies' %}">Continue</a>
+        </div>
+      {% endif %}
+    
+    </div>
+    <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper-wrapper">
+        
+        {% for testimony in testimony reversed %}
+
+        <div class="swiper-slide">
+          <div class="testimonial-wrap">
+             
+              <div class="testimonial-item">
+                <img src="{{testimony.image.url}}" class="testimonial-img" alt="">
+                <h3 style="font-size: x-large;"><b>{{testimony.name}}</b></h3>
+                <h4 style="font-size: x-large;"><b>{{testimony.occupation}}</b></h4>
+                <p style="color:white;">
+                  
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  {{testimony.content|slice:200}}...
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <a href="{% url 'complete_testimony' testimony.id %}">Read More</a>
+              </div>
+            </div>
+          </div><!-- End testimonial item -->
+          
+          
+          {% endfor %}
+
+
+      </div>
+          <div class="swiper-pagination"></div>
+          
+        </div>
+      </div>
+  </div>
+  </div>
+    </section><!-- End Testimonials Section -->
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        
+        <div style="margin-top: 50px; font-size: xx-large;" class="social-links text-center text-md-end">      
+          
+          <a href="https://www.youtube.com/@tickettofreedomacademy" class="youtube"><i class="bx bxl-youtube"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=100090500613162" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="https://instagram.com/tickettofreedompodcast?igshid=ZDdkNTZiNTM=" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href=" https://podcasters.spotify.com/pod/show/sylvie-tamanda/episodes/Ep-4--How-to-live-a-happier-and-fulfilled-life-as-a-woman-e22fkkc
+          " target="_blank" class="spotify"><i class="bx bxl-spotify"></i></a>
+          <a href="https://www.linkedin.com/in/sylvie-tamanda-182a2bbb" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+    <!-- </div> -->
+      <div class="social-links text-center text-md-end">
+
+        
+          <h4 style="color:gold;">Join my Community</h4>
+
+          
+          <form id="subscription-form" method="POST">
+                {% csrf_token %}          
+                <div class="form-group">
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                </div>
+                          
+                <div class="form-group mt-2">
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                          
+                <button id="myButton" class="btn btn-primary mt-2" type="submit">Subscribe</button>
+                <br>
+            
+            
+            {% for message in messages %}
+            <div style="display:none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            color:magenta;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);" id="thankYouMessage">{{message.tags}}</div>
+            
+            {% endfor %}
+          </form>
+          
+          <script>
+            console.log("JavaScript code is being executed.");
+            
+            var form = document.getElementById("subscription-form");
+            var message = document.getElementById("thankYouMessage");
+            var button = document.getElementById("myButton");
+            
+            console.log("form:", form);
+            console.log("message:", message);
+            console.log("button:", button);
+            
+            form.addEventListener("submit", function(event) {
+              event.preventDefault();
+              
+              console.log("Form submitted.");
+              
+              var formData = new FormData(form);
+              
+              button.disabled = true;
+              message.style.display = "none";
+              
+              console.log("formData:", formData);
+              
+              var xhr = new XMLHttpRequest();
+              xhr.open(form.method, form.action);
+              xhr.setRequestHeader("X-CSRFToken", "{{ csrf_token }}");
+              xhr.onload = function() {
+                button.disabled = false;
+                
+                console.log("xhr.onload:", xhr);
+                
+                if (xhr.status === 200) {
+                  message.innerHTML = "Subscribed successfully!";
+                  message.style.display = "block";
+                  form.reset();
+                } else {
+                  message.innerHTML = "An error occurred. Please try again later.";
+                  message.style.display = "block";
+                }
+              };
+              xhr.send(formData);
+            });
+          </script>
+
+          <br>
+       
+          
+      </div>
+    </div>
+          
+          
+          {% comment %} <button id="myButton">Click me</button> {% endcomment %}
+          {% comment %} <div id="thankYouMessage">Thank you for clicking!</div> {% endcomment %}
+          
+          
+        
+        {% if user.is_authenticated %}
+          
+          <a class="btn btn-primary btn-block" href="{% url 'subscription' %}">All</a>
+
+          {% endif %}
+        </div>
+      </div>
+      <center>
+      <div class="credits align-center" style="font-size: 20px;">
+        Powered by <a style="color:gold;" href="">Zilo</a>
+      </div>
+    </center>
+
+
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

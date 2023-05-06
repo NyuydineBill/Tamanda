@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Sylvie</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <!-- <link href="assets/img/favicon.png" rel="icon"> -->
+  <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <style>
+    /* Style the popup */
+    .popup {
+        display: none; /* Hide by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 20%;
+        right: 20%;
+        top: 1px;
+        width: 80%;
+        height: 100%;
+        overflow: auto; /* Enable scroll if needed */
+        float:right;
+        /* background-color: rgba(7, 67, 99, 0.5); Black  opacity; */
+    }
+    /* Style the popup content */
+    .popup-content {
+        background-color: rgb(150, 132, 33);
+        margin: 10% auto; /* 10% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+    /* Style the close button */
+    .popup-close {
+        color: green;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .popup-close:hover,
+    .popup-close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+<header id="" class="" style="background-color: grey;">
+  <div class="container d-flex align-items-center">
+    
+    <img class="logo me-auto" style="border-radius: 15px;"  src="{% static 'assets/img/logo.jpg' %}" height="60px;" width="90px;" />
+    <h5 style="color:white; color:white; font-size: xx-large;" class="logo me-auto ">Sylvie Tamanda</h5>
+  <details>
+      <summary style="margin-top: 0px;">
+        <img src="{% static 'assets/img/menu_icon.png' %}"/>
+      </summary>
+      <ul style="height: 200px; width: 160px; padding-left: -1px; padding-right: 20px;">
+        <div style="color:green;" class="container">
+        <div class="row" >
+          <li><a style="color:green;" href="{% url 'index' %}">Home</a></li>
+          <li><a style="color:green;" href="{% url 'about' %}">About Me</a></li>
+            <li><a style="color:green;" href="https://anchor.fm/sylvie-tamanda?utm_source=web&utm_campaign=web-share&utm_medium=sharing&%24web_only=true&_branch_match_id=1014947443770109628&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXLy7IL8lMq0zMS87IL9ItT03SSywo0MvJzMvWT9U3TgoL9HIOLawsTwIAKQpcFTAAAAA%3D">PodCast</a></li>
+            <li><a style="color:green;" href="https://www.youtube.com/@tickettofreedomacademy">Youtube</a></li>
+            <li><a style="color:green;" href="{% url 'courses' %}">Courses</a></li>
+            <li><a style="color:green;" href="{% url 'products' %}">Products</a></li>
+            <li><a style="color:green;" href="{% url 'events' %}">Events</a></li>
+          </div>
+        </div>
+      </ul>
+    </details>
+  </div>
+</header><!-- End Header -->
+<a class="btn btn-outline-primary mt-5" href="{% url 'index' %}">Back to website</a>
+<center>
+  <h2 class="mt-5">Click below to get your Free Ebook and return back to the website</h2>
+  <a href="{% static 'assets/pdf/Guide_to_Financial_Markets_6e.pdf' %}" download target="_blank" class="btn btn-primary mt-5">Download PDF Here</a>
+</center>
+</body>
+</html>

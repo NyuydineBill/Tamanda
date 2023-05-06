@@ -1,0 +1,60 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>sign_in page</title>
+  </head>
+  <body>
+
+    {% comment %} <div class="container"> {% endcomment %}
+{% comment %}  {% endcomment %}
+        {% comment %} letgo  {% endcomment %}
+    {% comment %} </div> {% endcomment %}
+
+    
+    <div class="d-flex justify-content-center mt-5">
+        <div class="col-md-6  bg-blue">
+          <div class="alert alert-info" role="alert">
+            <center style="font-size: xx-large;">
+
+                Signin Page
+            </center>
+            
+          </div>
+          <div class="container mt-5 bg-light rounded shadow-sm">
+
+            <form method='POST'>
+              {% csrf_token %}
+              <div class="mb-3">
+                <label for="username" class="form-label">Enter your username</label>
+                  <input type="username" class="form-control" id="username" name="username" required>
+                </div>
+                
+                <div class="mb-3">
+                  <label for="password1" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="password1" name="password1" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <br>
+                <center style="color:red; font-size: x-large;">
+                  No account ? 
+                  <br>
+                  <a style="font-size: x-large;" href="{% url 'signup' %}">Signup</a>
+                </center>
+              </form>
+
+              <a class="btn btn-primary" href="{% url 'signout' %}"> Logout </a>
+            </div>
+      </div>
+    </div>
+
+
